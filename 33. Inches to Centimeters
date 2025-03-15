@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the value in inches
+        Console.Write("Enter the length in inches: ");
+        double inches = Convert.ToDouble(Console.ReadLine());
+
+        // Convert inches to centimeters
+        double centimeters = inches * 2.54;
+
+        // Output the result
+        Console.WriteLine(inches + " inches is equal to " + centimeters + " centimeters.");
+    }
+}
