@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the number to check
+        Console.WriteLine("Enter a number to check if it's a Harshad number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        // Check if the number is a Harshad number
+        if (IsHarshadNumber(number))
+        {
+            Console.WriteLine(number + " is a Harshad number.");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not a Harshad number.");
+        }
+    }
+
+    // Function to check if the number is a Harshad number
+    static bool IsHarshadNumber(int number)
+    {
+        // Calculate the sum of the digits
+        int sumOfDigits = 0;
+        int temp = number;
+
+        while (temp > 0)
+        {
+            sumOfDigits += temp % 10;  // Add the last digit
+            temp /= 10;  // Remove the last digit
+        }
+
+        // Check if the number is divisible by the sum of its digits
+        return number % sumOfDigits == 0;
+    }
+}
