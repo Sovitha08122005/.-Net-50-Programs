@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input two numbers
+        Console.Write("Enter the first number: ");
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int b = Convert.ToInt32(Console.ReadLine());
+
+        // Display the values before swapping
+        Console.WriteLine($"Before swapping: a = {a}, b = {b}");
+
+        // Swapping using XOR
+        a = a ^ b;  // Step 1: a = a ^ b
+        b = a ^ b;  // Step 2: b = a ^ b (which gives original value of a)
+        a = a ^ b;  // Step 3: a = a ^ b (which gives original value of b)
+
+        // Display the values after swapping
+        Console.WriteLine($"After swapping: a = {a}, b = {b}");
+    }
+}
