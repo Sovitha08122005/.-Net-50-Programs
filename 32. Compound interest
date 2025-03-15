@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the principal amount
+        Console.Write("Enter the principal amount: ");
+        double principal = Convert.ToDouble(Console.ReadLine());
+
+        // Input the annual interest rate (in percentage)
+        Console.Write("Enter the annual interest rate (in percentage): ");
+        double rate = Convert.ToDouble(Console.ReadLine());
+
+        // Input the number of times interest is compounded per year
+        Console.Write("Enter the number of times interest is compounded per year: ");
+        int timesCompounded = Convert.ToInt32(Console.ReadLine());
+
+        // Input the number of years
+        Console.Write("Enter the number of years: ");
+        int years = Convert.ToInt32(Console.ReadLine());
+
+        // Convert the rate to decimal
+        double decimalRate = rate / 100;
+
+        // Calculate the compound interest
+        double amount = principal * Math.Pow(1 + decimalRate / timesCompounded, timesCompounded * years);
+
+        // Output the result
+        Console.WriteLine("The amount after " + years + " years is: " + amount);
+    }
+}
