@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the number
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        // Check if the number is a perfect square
+        if (IsPerfectSquare(number))
+        {
+            Console.WriteLine($"{number} is a perfect square.");
+        }
+        else
+        {
+            Console.WriteLine($"{number} is not a perfect square.");
+        }
+    }
+
+    // Function to check if the number is a perfect square
+    static bool IsPerfectSquare(int num)
+    {
+        // If the number is negative, it's not a perfect square
+        if (num < 0)
+            return false;
+
+        // Calculate the square root of the number
+        int sqrt = (int)Math.Sqrt(num);
+
+        // Check if the square of the integer part of the square root equals the original number
+        return sqrt * sqrt == num;
+    }
+}
