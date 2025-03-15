@@ -1,0 +1,15 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string mainString = "Hello, welcome to ChatGPT!";
+        string subString = "welcome";
+
+        // Case-sensitive check
+        bool isSubstring = mainString.Contains(subString);
+
+        Console.WriteLine(isSubstring); // Output: True
+    }
+}
