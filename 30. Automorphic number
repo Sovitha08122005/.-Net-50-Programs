@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the number to check
+        Console.WriteLine("Enter a number to check if it's an Automorphic number:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        // Check if the number is an Automorphic number
+        if (IsAutomorphicNumber(number))
+        {
+            Console.WriteLine(number + " is an Automorphic number.");
+        }
+        else
+        {
+            Console.WriteLine(number + " is not an Automorphic number.");
+        }
+    }
+
+    // Function to check if the number is an Automorphic number
+    static bool IsAutomorphicNumber(int number)
+    {
+        // Find the square of the number
+        int square = number * number;
+
+        // Get the number of digits in the original number
+        int length = number.ToString().Length;
+
+        // Extract the last digits of the square equal to the number of digits of the original number
+        int lastDigits = square % (int)Math.Pow(10, length);
+
+        // Check if the last digits of the square are equal to the original number
+        return lastDigits == number;
+    }
+}
