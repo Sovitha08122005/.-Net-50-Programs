@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input: Size of the array
+        Console.Write("Enter the number of elements in the array: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        int[] arr = new int[n];
+
+        // Input the elements of the array
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < n; i++)
+        {
+            arr[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Find the largest and smallest numbers
+        int largest = arr[0];
+        int smallest = arr[0];
+
+        for (int i = 1; i < n; i++)
+        {
+            if (arr[i] > largest)
+            {
+                largest = arr[i];
+            }
+            if (arr[i] < smallest)
+            {
+                smallest = arr[i];
+            }
+        }
+
+        // Calculate the difference
+        int difference = largest - smallest;
+
+        // Output the result
+        Console.WriteLine("The difference between the largest and smallest number is: " + difference);
+    }
+}
