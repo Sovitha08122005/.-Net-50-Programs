@@ -1,0 +1,38 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the decimal number
+        Console.WriteLine("Enter a decimal number:");
+        int decimalNumber = Convert.ToInt32(Console.ReadLine());
+
+        // Convert the decimal number to binary
+        string binary = DecimalToBinary(decimalNumber);
+
+        // Output the result
+        Console.WriteLine("The binary representation is: " + binary);
+    }
+
+    // Function to convert decimal to binary
+    static string DecimalToBinary(int decimalNum)
+    {
+        // If the number is zero, return "0"
+        if (decimalNum == 0)
+        {
+            return "0";
+        }
+
+        string binary = "";
+
+        // Repeatedly divide the number by 2 and store the remainders
+        while (decimalNum > 0)
+        {
+            binary = (decimalNum % 2) + binary;  // Prepend remainder (0 or 1)
+            decimalNum = decimalNum / 2;  // Integer division by 2
+        }
+
+        return binary;
+    }
+}
