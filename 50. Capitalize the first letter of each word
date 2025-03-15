@@ -1,0 +1,29 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "hello world from chatgpt";
+        
+        // Capitalize first letter of each word
+        string result = CapitalizeFirstLetterOfEachWord(input);
+
+        Console.WriteLine(result); // Output: "Hello World From Chatgpt"
+    }
+
+    static string CapitalizeFirstLetterOfEachWord(string str)
+    {
+        // Split the string by spaces, capitalize the first letter of each word, and join them back
+        string[] words = str.Split(' ');
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i].Length > 0)
+            {
+                words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1).ToLower();
+            }
+        }
+
+        return string.Join(" ", words);
+    }
+}
