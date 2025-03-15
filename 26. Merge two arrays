@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the size of the first array
+        Console.WriteLine("Enter the size of the first array:");
+        int size1 = Convert.ToInt32(Console.ReadLine());
+
+        // Create the first array
+        int[] array1 = new int[size1];
+
+        // Input the elements of the first array
+        Console.WriteLine("Enter the elements of the first array:");
+        for (int i = 0; i < size1; i++)
+        {
+            array1[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Input the size of the second array
+        Console.WriteLine("Enter the size of the second array:");
+        int size2 = Convert.ToInt32(Console.ReadLine());
+
+        // Create the second array
+        int[] array2 = new int[size2];
+
+        // Input the elements of the second array
+        Console.WriteLine("Enter the elements of the second array:");
+        for (int i = 0; i < size2; i++)
+        {
+            array2[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Merge the arrays
+        int[] mergedArray = MergeArrays(array1, array2);
+
+        // Output the merged array
+        Console.WriteLine("The merged array is:");
+        foreach (int num in mergedArray)
+        {
+            Console.Write(num + " ");
+        }
+    }
+
+    // Function to merge two arrays
+    static int[] MergeArrays(int[] array1, int[] array2)
+    {
+        // Create a new array with size equal to the sum of both arrays
+        int[] merged = new int[array1.Length + array2.Length];
+
+        // Copy the elements of the first array into the merged array
+        array1.CopyTo(merged, 0);
+
+        // Copy the elements of the second array into the merged array
+        array2.CopyTo(merged, array1.Length);
+
+        return merged;
+    }
+}
