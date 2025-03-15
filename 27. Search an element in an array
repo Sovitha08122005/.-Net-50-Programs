@@ -1,0 +1,52 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the size of the array
+        Console.WriteLine("Enter the size of the array:");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        // Create an array to store elements
+        int[] array = new int[size];
+
+        // Input the elements of the array
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Input the element to search for
+        Console.WriteLine("Enter the element to search:");
+        int target = Convert.ToInt32(Console.ReadLine());
+
+        // Search the element in the array
+        int index = LinearSearch(array, target);
+
+        // Output the result
+        if (index != -1)
+        {
+            Console.WriteLine("Element found at index: " + index);
+        }
+        else
+        {
+            Console.WriteLine("Element not found in the array.");
+        }
+    }
+
+    // Function to perform a linear search
+    static int LinearSearch(int[] arr, int target)
+    {
+        // Iterate through the array and check each element
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] == target)
+            {
+                return i;  // Return the index if the element is found
+            }
+        }
+        return -1;  // Return -1 if the element is not found
+    }
+}
