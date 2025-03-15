@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the value in minutes
+        Console.Write("Enter the time in minutes: ");
+        double minutes = Convert.ToDouble(Console.ReadLine());
+
+        // Convert minutes to hours
+        double hours = minutes / 60;
+
+        // Output the result
+        Console.WriteLine(minutes + " minutes is equal to " + hours + " hours.");
+    }
+}
