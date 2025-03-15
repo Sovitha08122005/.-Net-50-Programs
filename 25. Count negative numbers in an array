@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the size of the array
+        Console.WriteLine("Enter the size of the array:");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        // Create an array to store elements
+        int[] numbers = new int[size];
+
+        // Input the elements of the array
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            numbers[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Count the negative numbers in the array
+        int negativeCount = CountNegativeNumbers(numbers);
+
+        // Output the result
+        Console.WriteLine("The number of negative numbers in the array is: " + negativeCount);
+    }
+
+    // Function to count the number of negative numbers in the array
+    static int CountNegativeNumbers(int[] arr)
+    {
+        int count = 0;
+
+        // Iterate through the array
+        foreach (int num in arr)
+        {
+            if (num < 0)  // Check if the number is negative
+            {
+                count++;  // Increment count if the number is negative
+            }
+        }
+
+        return count;
+    }
+}
