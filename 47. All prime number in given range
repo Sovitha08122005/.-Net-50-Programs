@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+    // Function to check if a number is prime
+    static bool IsPrime(int num)
+    {
+        if (num <= 1)
+            return false; // Numbers less than or equal to 1 are not prime
+
+        // Check divisibility from 2 to the square root of num
+        for (int i = 2; i * i <= num; i++)
+        {
+            if (num % i == 0)
+                return false; // If divisible, it's not a prime number
+        }
+
+        return true; // If no divisors are found, it's prime
+    }
+
+    static void Main()
+    {
+        // Input the range
+        Console.Write("Enter the lower bound of the range: ");
+        int lowerBound = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the upper bound of the range: ");
+        int upperBound = Convert.ToInt32(Console.ReadLine());
+
+        // Print all prime numbers in the range
+        Console.WriteLine($"Prime numbers between {lowerBound} and {upperBound} are:");
+        
+        for (int num = lowerBound; num <= upperBound; num++)
+        {
+            if (IsPrime(num))
+            {
+                Console.Write(num + " ");
+            }
+        }
+        Console.WriteLine(); // For newline after printing all primes
+    }
+}
